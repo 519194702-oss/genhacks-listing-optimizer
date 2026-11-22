@@ -345,7 +345,7 @@ if (typeof document !== 'undefined') {
     $('in-title').value = p.title || '';
     $('in-bullets').value = (p.bullets || []).join('\n');
     $('in-desc').value = p.description || '';
-    $('in-keywords').value = (p.keywords || []).join(', ');
+    $('in-keywords').value = Array.isArray(p.keywords) ? p.keywords.join(', ') : (p.keywords || '');
   }
 
   function showError(msg) {
